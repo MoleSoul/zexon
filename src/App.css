@@ -1,0 +1,136 @@
+#main {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #e9ecef;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+}
+
+#add_device {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+#add_device_title {
+  color: #111;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+#add_device_form .field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #555;
+  text-align: left;
+}
+
+#add_device_form input {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.6rem;
+  color: #333;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+#add_device_form input:focus {
+  outline: none;
+  border-color: #123456;
+}
+
+#add_device_form button[type=submit] {
+  background-color: #123456;
+  color: #fff;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+#add_device_form button[type=submit]:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+#add_device_form button[type=submit]:disabled {
+  background-color: #8899aa;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d32f2f;
+  padding: 0.5rem;
+  background: #ffebee;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.success {
+  color: #0a712c;
+  padding: 0.5rem;
+  background: #90d4a7;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#devices_table {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #222;
+}
