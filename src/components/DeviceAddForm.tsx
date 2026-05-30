@@ -115,7 +115,7 @@ const DeviceAddForm = ({ onSuccess }: Props) => {
 
                  {isSuccess && (
                     <div role="alert" aria-live="assertive">
-                        <p className="success">Device Saved</p>
+                        <p className="success">Data sent successfully</p>
                     </div>
                 )}
             </form>
