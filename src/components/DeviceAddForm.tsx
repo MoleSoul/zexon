@@ -90,7 +90,7 @@ const DeviceAddForm = ({ onSuccess }: Props) => {
                         placeholder="percentage"
                         min={0}
                         max={100}
-                        onChange={(e) => handleChangeBattery(parseInt(e.target.value))}
+                        onChange={(e) => handleChangeBattery(parseInt(e.target.value)||0)}
                         aria-required="true"
                     />
                 </div>
