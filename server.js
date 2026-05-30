@@ -14,8 +14,6 @@ app.use(express.json());
 const devices = [];
 
 app.get('/api/devices', (req, res) => {
-    //aby boli najnovsie navrchu kedze mame iba uuid a battery_percent 
-    devices.reverse();
     res.status(200).json(devices);
 });
 
@@ -26,13 +24,22 @@ app.post('/api/ping', (req, res) => {
         return res.status(400).send();
     }
 
+    //kedze neukladame timestamp kvoli historii mozme rovno aktualizovat
+    const existingDevice = devices.find(device => device.uuid === uuid);
+
+    if (existingDevice) {
+        existingDevice.battery_percent = battery_percent;
+        console.log("Device updated:", existingDevice);
+        return res.status(204).send();
+    }
+
     const newDevice = {
         uuid: uuid,
         battery_percent: battery_percent,
     };
 
     devices.push(newDevice);
-    console.log("New device saved:", newDevice);
+    console.log("New device added:", newDevice);
 
     res.status(201).send();
 });

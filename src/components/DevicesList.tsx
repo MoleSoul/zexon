@@ -5,14 +5,11 @@ type Props = {
 }
 const DevicesList = ({ devices }: Props) => {
 
-
-//v pripade ze by bolo viacero zaznamom s rovnakym uuid bez pouzitia index ako key
-const uuidCounts: Record<string, number> = {};
-const uniqueDevices = devices.map((d) => {
-    const count = uuidCounts[d.uuid] || 0;
-    uuidCounts[d.uuid] = count + 1;    
-    return {...d,id: count === 0 ? d.uuid : `${d.uuid}_${count}`};
-});
+    const getBatteryStatusColor = (device: Device) => {
+        if (device.battery_percent > 50) return '#32be40';
+        if (device.battery_percent < 10) return '#b81a1a';
+        return '#d0bf26';
+    }
 
     return (
         <div
@@ -32,10 +29,10 @@ const uniqueDevices = devices.map((d) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {uniqueDevices.map((device) => (
-                        <tr key={device.id}>
+                    {devices.map((device) => (
+                        <tr key={device.uuid}>
                             <th scope="row">{device.uuid}</th>
-                            <td>{device.battery_percent}</td>
+                            <td style={{ color: getBatteryStatusColor(device) }}>{device.battery_percent}</td>
                         </tr>
                     ))}
                 </tbody>

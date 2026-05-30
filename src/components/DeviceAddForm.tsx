@@ -66,7 +66,7 @@ const DeviceAddForm = ({ onSuccess }: Props) => {
 
     return (
         <div id="add_device" aria-labelledby="add_device_title">
-            <h2 id="add_device_title">Add a New Device</h2>
+            <h2 id="add_device_title">Set device battery percentage</h2>
 
             <form id="add_device_form" onSubmit={handleSubmit}>
                 <div className="field">
@@ -90,7 +90,7 @@ const DeviceAddForm = ({ onSuccess }: Props) => {
                         placeholder="percentage"
                         min={0}
                         max={100}
-                        onChange={(e) => handleChangeBattery(parseInt(e.target.value)||0)}
+                        onChange={(e) => handleChangeBattery(parseInt(e.target.value) || 0)}
                         aria-required="true"
                     />
                 </div>
@@ -102,22 +102,23 @@ const DeviceAddForm = ({ onSuccess }: Props) => {
                 >
                     {loading ? "Sending..." : "Send"}
                 </button>
+                <div id="messages_box">
+                    {errors.length > 0 && (
+                        <div role="alert" aria-live="assertive">
+                            {errors.map((err, index) => (
+                                <p className="error" key={`error${index}`}>
+                                    {err.message}
+                                </p>
+                            ))}
+                        </div>
+                    )}
 
-                {errors.length > 0 && (
-                    <div role="alert" aria-live="assertive">
-                        {errors.map((err, index) => (
-                            <p className="error" key={`error${index}`}>
-                                {err.message}
-                            </p>
-                        ))}
-                    </div>
-                )}
-
-                 {isSuccess && (
-                    <div role="alert" aria-live="assertive">
-                        <p className="success">Data sent successfully</p>
-                    </div>
-                )}
+                    {isSuccess && (
+                        <div role="alert" aria-live="assertive">
+                            <p className="success">Data sent successfully</p>
+                        </div>
+                    )}
+                </div>
             </form>
         </div>
     )

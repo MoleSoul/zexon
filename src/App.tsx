@@ -20,7 +20,7 @@ function App() {
 
   return (
     <main id="main" aria-labelledby="main_heading">
-      <h1 id="main_heading">Device Management</h1>
+      <h1 id="main_heading">Device Battery Check</h1>
       <DeviceAddForm onSuccess={handleDone} />
       <DevicesList devices={devices} />
     </main>
