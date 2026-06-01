@@ -30,7 +30,7 @@ There is also simple express backend to handle API requests (GET & POST)
 
 2. **API Functions** [API Functions](./src/functions/api.ts)
 
-3. **Components** [Zod Schemas](./src/schemas/index.ts)
+3. **Zod Schemas** [Zod Schemas](./src/schemas/index.ts)
 
 ## Note
 The application expects **React App** running on vite default **port 5173**  
